@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="createUser.css">
+</head>
+<body>
+    <div class="background">
+        <div class="header">
+           <img class="userImage" 
+           src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg">
+           <div style="padding-left: 10px; padding-top: 1vw;">
+                <label class="userNameLabel">User Name</label>
+           </div>
+           
+        </div>
+
+        <div class="content">
+            <button class="logoutBttn" onclick=window.location.href="index.html">Log Out</button>
+
+            <div class="userBox">
+                <div style="display: flex; text-align: center; margin-left: 8vw;">
+                    <img class="userImage"
+                    src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg">
+                    <div>
+                        <label class="userDetails">User Name</label><br/>
+                        <label class="userDetails">email Address</label><br/>
+                    </div>
+                </div>
+                <div>
+                    <form>
+                        <input type="text" class="userName" placeholder="User Name"><br/>
+                        <input type="password" class="passWord" placeholder="Password"><br/>
+                        <button class="createBttn">Create</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // using an array to save user names and passwords
+        var users=[];
+
+        const addUser=(ev)=>{
+            
+            var user={
+                userMame:document.getElementById('userName').value,
+                passWord:document.getElementById('passWord').value
+            }
+
+            users.push(user);
+            document.forms[0].reset();
+            // make the form reset once the button is pressd 
+        } 
+
+        document.addEventListener('DOMContentLoaded', (ev)=>{
+            document.getElementById('createBttn').addEventListener('click',addUser);
+            // add new information once the button is clicked 
+        });
+        
+
+    </script>
+</body>
+</html>

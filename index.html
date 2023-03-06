@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="background">
+        <div class="header">
+           <button class="signInBttn" onclick=window.location.href="userPage.html">
+            Sign In
+           </button>
+        </div>
+        <div class="content">
+            <div class="loginBox">
+                <div class="topic1">Log In <br/></div>
+                    <form>
+                        <input type="text" id="userName" class="userName" placeholder="User Name"><br/>
+                        <input type="password" id="passWord" class="passWord" placeholder="Password"><br/>
+                        <div class="errorMsg">one or more feilds are incorrect</div>
+                        <button class="loginButtn" onclick={validateLogin()}> Log In</button>
+                    </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function validateLogin (){
+            var userName=document.getElementById("userName").value;
+            var passWord=document.getElementById("passWord").value;
+            localStorage.setItem=("User",userName);
+            if (userName=="user001" && passWord=="Pass123"){
+                alert("Login Success");
+                window.open=("userPage.html");
+                return false;
+            }
+            else{
+            }
+        }
+    </script>
+</body>
+</html>
